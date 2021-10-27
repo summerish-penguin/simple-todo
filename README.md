@@ -1,3 +1,3 @@
 # simple-todo
 3 simple sh scripts to manage a todo list file.
-You may want to change the file name and location for the scripts, by default it's `~/.local/share/todo-list.txt`
+Before running any of these scripts, create a list file: `touch ~/.local/share/todo-list.txt`. If you want to use a different file name or location you will have to edit the scripts accordingly.
