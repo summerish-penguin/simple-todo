@@ -1,3 +1,4 @@
 #!/bin/sh
 
-cat ~/.local/share/todo-list.txt
+FILE=~/.local/share/todo-list.txt
+cat $FILE
