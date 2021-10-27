@@ -1,29 +1,32 @@
 #!/bin/sh
 
-FILE=~/documenti/utili/todo-list.txt
+# Todo-list file path; edit accordingly.
+FILE=~/.local/share/todo-list.txt
 
+# Print the todo-list and read user input. Type the number of the line you want to delete.
 todo-list
 printf '\n'
-read LINEA
+read LINE
 
-if [ "$LINEA" = "1" ];then
+# Delete selected line.
+if [ "$LINE" = "1" ];then
     sed -i '1d' $FILE
-elif [ "$LINEA" = "2" ];then
+elif [ "$LINE" = "2" ];then
     sed -i '2d' $FILE
-elif [ "$LINEA" = "3" ];then
+elif [ "$LINE" = "3" ];then
     sed -i '3d' $FILE
-elif [ "$LINEA" = "4" ];then
+elif [ "$LINE" = "4" ];then
     sed -i '4d' $FILE
-elif [ "$LINEA" = "5" ];then
+elif [ "$LINE" = "5" ];then
     sed -i '5d' $FILE
-elif [ "$LINEA" = "6" ];then
+elif [ "$LINE" = "6" ];then
     sed -i '6d' $FILE
-elif [ "$LINEA" = "7" ];then
+elif [ "$LINE" = "7" ];then
     sed -i '7d' $FILE
-elif [ "$LINEA" = "8" ];then
+elif [ "$LINE" = "8" ];then
     sed -i '8d' $FILE
-elif [ "$LINEA" = "9" ];then
+elif [ "$LINE" = "9" ];then
     sed -i '9d' $FILE
-elif [ "$LINEA" = "10" ];then
+elif [ "$LINE" = "10" ];then
     sed -i '10d' $FILE
 fi
