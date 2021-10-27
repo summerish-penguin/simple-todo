@@ -1,0 +1,30 @@
+#!/bin/sh
+
+read -p "In quale posizione della lista vuoi aggiungere l'oggetto? " LINEA
+read -p "Aggiungi alla lista: " NUOVO
+
+
+if [ "$NUOVO" != "" ]; [ "$LINEA" = "1" ]; then
+    awk -i inplace 'NR==1{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "2" ]; then
+    awk -i inplace 'NR==2{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "3" ]; then
+    awk -i inplace 'NR==3{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "4" ]; then
+    awk -i inplace 'NR==4{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "5" ]; then
+    awk -i inplace 'NR==5{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "6" ]; then
+    awk -i inplace 'NR==6{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "7" ]; then
+    awk -i inplace 'NR==7{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "8" ]; then
+    awk -i inplace 'NR==8{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "9" ]; then
+    awk -i inplace 'NR==9{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+elif [ "$NUOVO" != "" ]; [ "$LINEA" = "10" ]; then
+    awk -i inplace 'NR==10{print "'$NUOVO'"}1' ~/documenti/utili/todo-list.txt 
+fi
+
+printf \n
+todo-list

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat ~/documenti/utili/todo-list.txt

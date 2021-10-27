@@ -1,0 +1,26 @@
+#!/bin/sh
+todo-list
+printf '\n'
+read LINEA
+
+if [ "$LINEA" = "1" ];then
+    sed -i '1d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "2" ];then
+    sed -i '2d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "3" ];then
+    sed -i '3d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "4" ];then
+    sed -i '4d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "5" ];then
+    sed -i '5d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "6" ];then
+    sed -i '6d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "7" ];then
+    sed -i '7d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "8" ];then
+    sed -i '8d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "9" ];then
+    sed -i '9d' ~/documenti/utili/todo-list.txt
+elif [ "$LINEA" = "10" ];then
+    sed -i '10d' ~/documenti/utili/todo-list.txt
+fi
