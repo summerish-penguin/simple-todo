@@ -1,38 +1,44 @@
 #!/bin/sh
 
+# Specify the path of your todo-list file; edit accordingly.
 FILE=~/documenti/utili/todo-list.txt
 
-read -p "In what line do you want the entry to be written? " LINEA
-read -p "Add to the list: " NUOVO
+# Read user input.
+read -p "In what line do you want the entry to be written? " LINE
+read -p "Add to the list: " NEW
 
+# Append a newline to the file.
 printf "%s\n" >> $FILE
 
-if [ "$NUOVO" != "" ]; [ "$LINEA" = "1" ]; then
-    awk -i inplace 'NR==1{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "2" ]; then
-    awk -i inplace 'NR==2{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "3" ]; then
-    awk -i inplace 'NR==3{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "4" ]; then
-    awk -i inplace 'NR==4{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "5" ]; then
-    awk -i inplace 'NR==5{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "6" ]; then
-    awk -i inplace 'NR==6{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "7" ]; then
-    awk -i inplace 'NR==7{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "8" ]; then
-    awk -i inplace 'NR==8{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "9" ]; then
-    awk -i inplace 'NR==9{print "'$NUOVO'"}1' $FILE
-elif [ "$NUOVO" != "" ]; [ "$LINEA" = "10" ]; then
-    awk -i inplace 'NR==10{print "'$NUOVO'"}1' $FILE
+# Ad new text according to the line number and the text string chosen by the user. This list can be max 10 lines long.
+if [ "$NEW" != "" ]; [ "$LINE" = "1" ]; then
+    awk -i inplace 'NR==1{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "2" ]; then
+    awk -i inplace 'NR==2{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "3" ]; then
+    awk -i inplace 'NR==3{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "4" ]; then
+    awk -i inplace 'NR==4{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "5" ]; then
+    awk -i inplace 'NR==5{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "6" ]; then
+    awk -i inplace 'NR==6{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "7" ]; then
+    awk -i inplace 'NR==7{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "8" ]; then
+    awk -i inplace 'NR==8{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "9" ]; then
+    awk -i inplace 'NR==9{print "'$NEW'"}1' $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "10" ]; then
+    awk -i inplace 'NR==10{print "'$NEW'"}1' $FILE
 fi
 
-ULTIMA=$(sed -n '$p' $FILE)
-if [ "$ULTIMA" = "" ]; then
+# If the last line added before is empty, delete it.
+LAST=$(sed -n '$p' $FILE)
+if [ "$LAST" = "" ]; then
     sed -i '$d' $FILE   
 fi
 
+# Print the list.
 printf \n
 todo-list
