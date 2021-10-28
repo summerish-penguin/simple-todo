@@ -1,4 +1,6 @@
 #!/bin/sh
 
 FILE=~/.local/share/todo-list.txt
+printf "TO DO: \n" "\n"
+
 cat $FILE
