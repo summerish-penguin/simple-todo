@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# Specify the path of your todo-list file; edit accordingly.
+FILE=~/documenti/utili/todo-list.txt
+
+# Read user input.
+read -p "In what line do you want the entry to be written? " LINE
+printf "Add to the list: "
+read NEW
+
+# Append a newline to the file.
+printf "%s\n" >> $FILE
+
+# Ad new text according to the line number and the text string chosen by the user. This list can be max 10 lines long.
+if [ "$NEW" != "" ]; [ "$LINE" = "1" ]; then
+    sed -i "1i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "2" ]; then
+    sed -i "2i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "3" ]; then
+    sed -i "3i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "4" ]; then
+    sed -i "4i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "5" ]; then
+    sed -i "5i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "6" ]; then
+    sed -i "6i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "7" ]; then
+    sed -i "7i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "8" ]; then
+    sed -i "8i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "9" ]; then
+    sed -i "9i$NEW" $FILE
+elif [ "$NEW" != "" ]; [ "$LINE" = "10" ]; then
+    sed -i "10i$NEW" $FILE
+fi
+
+# If the last line added before is empty, delete it.
+LAST=$(sed -n '$p' $FILE)
+if [ "$LAST" = "" ]; then
+    sed -i '$d' $FILE   
+fi
+
+# Print the list.
+printf \n
+todo-list
