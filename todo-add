@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Specify the path of your todo-list file; edit accordingly.
-FILE=~/documenti/utili/todo-list.txt
+FILE=~/.local/share /todo-list.txt
 
 # Read user input.
 read -p "In what line do you want the entry to be written? " LINE
