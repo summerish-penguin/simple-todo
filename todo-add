@@ -41,5 +41,5 @@ if [ "$LAST" = "" ]; then
 fi
 
 # Print the list.
-printf \n
+printf "\n"
 todo-list
